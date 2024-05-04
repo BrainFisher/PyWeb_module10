@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Login</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+    <!-- Посилання на інші сторінки -->
+    <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'author_list' %}">Authors List</a></li>
+        <li><a href="{% url 'all_quotes' %}">All Quotes</a></li>
+        <li><a href="{% url 'signup' %}">Sign Up</a></li>
+        <li><a href="{% url 'add_author' %}">Add Author</a></li>
+        <li><a href="{% url 'add_quote' %}">Add Quote</a></li>
+        <li><a href="{% url 'author_detail' %}">Author Detail</a></li>
+        
+    </ul>
+{% endblock %}
